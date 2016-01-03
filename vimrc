@@ -55,7 +55,10 @@ Plug 'spf13/vim-colors'
 Plug 'moll/vim-node'
 call plug#end()
 
+"用F2進入張貼模式
 nnoremap <F2> :set invpaste paste?<CR>
+
+"用空白重覆執行巨集
 nnoremap <Space> @q
 
 
@@ -70,6 +73,7 @@ nmap <S-j> <C-w>j
 nmap <S-k> <C-w>k
 nmap <S-l> <C-w>l
 
+"用Ctrl+l及Ctrl+h在不同的標標移動
 map  <C-l> :tabn<CR><C-w>l
 map  <C-h> :tabp<CR><C-w>h
 
@@ -78,9 +82,10 @@ map  <C-h> :tabp<CR><C-w>h
 nmap <silent> <C-N> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
+"重載~/.vimrc設定
 nnoremap <F5> :source ~/.vimrc<CR>
 
-"=====標記高亮所有搜尋結果=====
+"=====F9標記高亮所有搜尋結果=====
 let g:toggleHighlight = 1
 function! ToggleHighlight(...)
   if a:0 == 1 "toggle behaviour
