@@ -25,7 +25,9 @@ set guioptions-=T "移除上方工具列
 set guioptions-=r "移除右邊捲軸
 set go-=L "移除左手邊捲軸
 set mouse=a
-
+"把ctags建立的檔案存到./vim/tags中，防止被外面的人存取
+"ctags --tag-relative=yes -R -f ~/.vim/tags . 
+set tags+=~/.vim/tags
 hi Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
 
 "單行的上下行
@@ -36,6 +38,9 @@ nnoremap k gk
 command! H let @/=""
 
 let mapleader=","
+let g:cssColorVimDoNotMessMyUpdatetime = 1
+
+
 "返回normal model
 imap jj <esc>
 
@@ -53,6 +58,8 @@ Plug 'Shougo/neocomplcache.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'spf13/vim-colors'
 Plug 'moll/vim-node'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'skammer/vim-css-color'
 call plug#end()
 
 "用F2進入張貼模式
