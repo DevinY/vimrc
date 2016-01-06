@@ -25,14 +25,14 @@ set guioptions-=T "移除上方工具列
 set guioptions-=r "移除右邊捲軸
 set go-=L "移除左手邊捲軸
 set mouse=a
-"把ctags建立的檔案存到./vim/tags中，防止被外面的人存取
-"ctags --tag-relative=yes -R -f ~/.vim/tags . 
-set tags+=~/.vim/tags
 hi Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
 
 "單行的上下行
 nnoremap j gj 
 nnoremap k gk
+
+"檢易開檔，例如: include("config.php");
+nnoremap <Leader>o ^/['"]<CR>l<C-w>gf
 
 "移除搜尋結果
 command! H let @/=""
@@ -60,10 +60,17 @@ Plug 'spf13/vim-colors'
 Plug 'moll/vim-node'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'skammer/vim-css-color'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 "用F2進入張貼模式
 nnoremap <F2> :set invpaste paste?<CR>
+
+"把ctags建立的檔案存到./vim/tags中，防止被外面的人存取
+"ctags --tag-relative=yes -R -f ~/.vim/tags . 
+set tags+=~/.vim/tags
+"用F3 rebuild ctags
+map <F3> :! ctags --exclude=.git --php-kinds=+cdfi --languages=php --recurse --tag-relative=yes -R -f ~/.vim/tags .<CR>
 
 "用空白重覆執行巨集
 nnoremap <Space> @q
@@ -91,6 +98,9 @@ let NERDTreeQuitOnOpen = 1
 
 "重載~/.vimrc設定
 nnoremap <F5> :source ~/.vimrc<CR>
+
+"Tagbar熱鍵
+nmap <F8> :TagbarToggle<CR>
 
 "=====F9標記高亮所有搜尋結果=====
 let g:toggleHighlight = 1
