@@ -1,6 +1,7 @@
 # vimrc 
 這個是我使用的.vimrc設定檔，
-主要透過https://github.com/junegunn/vim-plug安裝及管理一些套件。
+主要透過 https://github.com/junegunn/vim-plug
+安裝及管理一些套件。
 
 
 
