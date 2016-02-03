@@ -3,6 +3,10 @@
 主要透過 https://github.com/junegunn/vim-plug
 安裝及管理一些套件。
 
+安裝及使用(請參考Youtube)
+
+https://youtu.be/FPYv4S5NH2o
+
 
 
 熱鍵說明:
