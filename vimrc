@@ -13,7 +13,7 @@ set sw=4
 set bs=2
 set nopaste
 set ai
-set foldmethod=indent
+"set foldmethod=manual
 set completeopt=menu
 set t_Co=256
 set tabpagemax=200
@@ -24,7 +24,8 @@ set gfn=Monaco:h16
 set guioptions-=T "移除上方工具列
 set guioptions-=r "移除右邊捲軸
 set go-=L "移除左手邊捲軸
-set mouse=a
+"在vim裡面用滑鼠
+set mouse=r
 hi Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
 
 "單行的上下行
@@ -36,9 +37,17 @@ nnoremap <Leader>o ^/['"]<CR>l<C-w>gf
 
 "移除搜尋結果
 command! H let @/=""
+"vim-gitgutter
+let g:gitgutter_sign_column_always = 1
 
 let mapleader=","
 let g:cssColorVimDoNotMessMyUpdatetime = 1
+
+
+augroup vimrc
+	au BufReadPre * setlocal foldmethod=indent
+	au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
 
 
 "返回normal model
@@ -61,6 +70,7 @@ Plug 'moll/vim-node'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'skammer/vim-css-color'
 Plug 'majutsushi/tagbar'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 "用F2進入張貼模式
@@ -74,7 +84,6 @@ map <F3> :! ctags --exclude=.git --php-kinds=+cdfi --languages=php --recurse --t
 
 "用空白重覆執行巨集
 nnoremap <Space> @q
-
 
 ":resize +5 (可垂直加五行或減五行)
 "nmap <C-A-v> :vertical resize +5 <cr>
