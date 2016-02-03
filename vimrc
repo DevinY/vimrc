@@ -71,6 +71,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'skammer/vim-css-color'
 Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 "用F2進入張貼模式
