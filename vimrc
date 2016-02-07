@@ -73,6 +73,10 @@ Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
+"CtrlP
+let g:ctrlp_custom_ignore = 'node_modules\|git'
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
+
 
 "用F2進入張貼模式
 nnoremap <F2> :set invpaste paste?<CR>
@@ -81,7 +85,7 @@ nnoremap <F2> :set invpaste paste?<CR>
 "ctags --tag-relative=yes -R -f ~/.vim/tags . 
 set tags+=~/.vim/tags
 "用F3 rebuild ctags
-map <F3> :! ctags --exclude=.git --php-kinds=+cdfi --languages=php --recurse --tag-relative=yes -R -f ~/.vim/tags .<CR>
+map <F3> :! ctags --exclude=.git --php-kinds=+cdfi --languages=-javascript,sql --recurse --tag-relative=yes -R -f ~/.vim/tags .<CR>
 
 "用空白重覆執行巨集
 nnoremap <Space> @q
@@ -105,6 +109,7 @@ map  <C-h> :tabp<CR><C-w>h
 "NERDTree熱鍵
 nmap <silent> <C-N> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
+let NERDTreeHijackNetrw = 0
 
 "重載~/.vimrc設定
 nnoremap <F5> :source ~/.vimrc<CR>
