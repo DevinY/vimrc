@@ -27,6 +27,8 @@ set go-=L "移除左手邊捲軸
 "在vim裡面用滑鼠
 set mouse=r
 hi Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
+hi Normal ctermfg=grey ctermbg=darkblue
+
 
 "單行的上下行
 nnoremap j gj 
@@ -76,6 +78,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/SearchComplete'
 Plug 'jiangmiao/auto-pairs'
+Plug 'vim-scripts/ShowMarks'
 call plug#end()
 
 "CtrlP
@@ -92,6 +95,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+
 
 "Commands                        Mode
 "--------                        ----
@@ -147,8 +151,18 @@ let NERDTreeHijackNetrw = 0
 "重載~/.vimrc設定
 nnoremap <F5> :source ~/.vimrc<CR>
 
+"Showmarks，用, c清除所有的Mark
+nnoremap <silent><Leader>c :ShowMarksClearAll<CR>
+nmap <F8> :ShowMarksToggle<CR>
+let g:showmarks_include="abcdef"
+"用leader kye，我的設定是,來開關，用:h Showmarks看說明
+",mt : Toggles ShowMarks on and off.
+",mh : Hides an individual mark.
+",ma : Hides all marks in the current buffer.
+",mm : Places the next available mark.
+
+
 "Tagbar熱鍵
-"nmap <F8> :TagbarToggle<CR>
 nnoremap <silent><Leader>b :TagbarToggle<CR>
 
 "=====F9標記高亮所有搜尋結果=====
