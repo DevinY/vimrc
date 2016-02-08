@@ -7,6 +7,8 @@
 
 https://youtu.be/FPYv4S5NH2o
 
+####
+
 
 
 ####熱鍵說明:
@@ -37,6 +39,9 @@ https://youtu.be/FPYv4S5NH2o
 我設定的Leader kye是 <kbd>,</kbd>
 <pre><code><kbd>,</kbd><kbd>c</kbd><kbd>d</kbd> 切換到目前的檔案的資料夾
 所以透過<kbd>:e .</kbd>即可開啟這個資料夾的檔案</code></pre>
+
+####Tagbar熱鍵(快速的押,再壓b)
+<pre><code><kbd>,</kbd>+<kbd>b</kbd> 開關Tagbar</code></pre>
 
 ####CtrlP的熱鍵:
 <pre><code><kbd>Ctrl</kbd>+<kbd>p</kbd> 搜尋檔案

@@ -72,10 +72,43 @@ Plug 'skammer/vim-css-color'
 Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/SearchComplete'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
+
 "CtrlP
 let g:ctrlp_custom_ignore = 'node_modules\|git'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
+
+"syntatstic 語法確認的外掛。
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+
+"Commands                        Mode
+"--------                        ----
+"nmap, nnoremap, nunmap          Normal mode
+"imap, inoremap, iunmap          Insert and Replace mode
+"vmap, vnoremap, vunmap          Visual and Select mode
+"xmap, xnoremap, xunmap          Visual mode
+"smap, snoremap, sunmap          Select mode
+"cmap, cnoremap, cunmap          Command-line mode
+"omap, onoremap, ounmap          Operator pending mode
+
+"Ctags + Ctrlp
+"let you search through your tags file and jump to where tags are defined.
+nmap <leader>. :CtrlPTag<cr>
+
+"emmet-vim
+"html:5_ (Ctrl+y an,)
 
 
 "用F2進入張貼模式
@@ -115,7 +148,8 @@ let NERDTreeHijackNetrw = 0
 nnoremap <F5> :source ~/.vimrc<CR>
 
 "Tagbar熱鍵
-nmap <F8> :TagbarToggle<CR>
+"nmap <F8> :TagbarToggle<CR>
+nnoremap <silent><Leader>b :TagbarToggle<CR>
 
 "=====F9標記高亮所有搜尋結果=====
 let g:toggleHighlight = 1
