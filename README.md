@@ -35,10 +35,10 @@ brew install ctags
 
 ####調整分割視窗大小:
 
-<kbd>Ctrl</kbd>+<kbd>j</kbd> 垂直分割放大
+<pre><code><kbd>Ctrl</kbd>+<kbd>j</kbd> 垂直分割放大
 <kbd>Ctrl</kbd>+<kbd>k</kbd> 垂直分割縮小
 <kbd>Up</kbd> 水平分割放大
-<kbd>Down</kbd> 水平分割縮小
+<kbd>Down</kbd> 水平分割縮小</code></pre>
 
 
 
@@ -56,8 +56,8 @@ brew install ctags
 
 ####Tagbar熱鍵(快速的押,再壓b)
 <pre><code><kbd>,</kbd>+<kbd>c</kbd> 清除搜尋結果的高亮
-<pre><code><kbd>,</kbd>+<kbd>m</kbd> 清除所有mark標記
-<pre><code><kbd>,</kbd>+<kbd>b</kbd> Tagbar開關 </code></pre>
+<kbd>,</kbd>+<kbd>m</kbd> 清除所有mark標記
+<kbd>,</kbd>+<kbd>b</kbd> Tagbar開關 </code></pre>
 
 ####CtrlP的熱鍵:
 <pre><code><kbd>Ctrl</kbd>+<kbd>p</kbd> 搜尋檔案
