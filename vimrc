@@ -1,8 +1,11 @@
 "Unix 或 Linux 及MacOS透過curl安裝vim-plug外掛
 "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 set fileencodings=utf-8,gb2312,big5
+hi clear
+if exists("syntax_on")
 syntax reset
 syntax on
+endif
 filetype indent plugin on
 lang message zh_TW.utf-8
 set nocompatible
@@ -14,6 +17,8 @@ set sw=4
 set bs=2
 set nopaste
 set ai
+set fillchars+=vert:█
+hi VertSplit guifg=red guibg=bg
 "set foldmethod=manual
 set completeopt=menu
 set t_Co=256
@@ -25,8 +30,8 @@ set gfn=Monaco:h16
 set guioptions-=T "移除上方工具列
 set guioptions-=r "移除右邊捲軸
 set go-=L "移除左手邊捲軸
-set mouse=a "在vim裡面用滑鼠
-set ttymouse=xterm2
+set mouse=r "在vim裡面用滑鼠
+"set ttymouse=xterm2
 set foldcolumn=0
 set shiftwidth=4  " number of spaces to use for autoindenting
 set scrolljump=5
@@ -38,11 +43,39 @@ hi ErrorMsg guibg=White guifg=Red
 
 
 "單行的上下行
-nnoremap j gj 
+nnoremap j gj
 nnoremap k gk
 
+let mapleader=","
+"====LEADER Key的設定
 "檢易開檔，例如: include("config.php");
 nnoremap <Leader>o ^/['"]<CR>l<C-w>gf
+"Ctags + Ctrlp
+"let you search through your tags file and jump to where tags are defined.
+nmap <leader>. :CtrlPTag<cr>
+
+"syntatstic 語法確認的外掛。
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_shell_checkers = ['bash', 'sh']
+
+"保留搜尋結果
+"nnoremap <F12> :set hlsearch!<CR>
+"用, h清除搜尋的高亮
+nnoremap <leader>h :let @/ = ""<CR>
+"Tagbar熱鍵
+nnoremap <silent><Leader>b :TagbarToggle<CR>
+
+"Showmarks，用, c清除所有的Mark
+nnoremap <silent><Leader>c :ShowMarksClearAll<CR>
+
 
 "移除搜尋結果
 command! H let @/=""
@@ -57,7 +90,6 @@ let g:gitgutter_signs = 0
 
 
 
-let mapleader=","
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 
 
@@ -100,16 +132,6 @@ call plug#end()
 let g:ctrlp_custom_ignore = 'node_modules\|git'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
 
-"syntatstic 語法確認的外掛。
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 
 
 "Commands                        Mode
@@ -122,9 +144,6 @@ let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 "cmap, cnoremap, cunmap          Command-line mode
 "omap, onoremap, ounmap          Operator pending mode
 
-"Ctags + Ctrlp
-"let you search through your tags file and jump to where tags are defined.
-nmap <leader>. :CtrlPTag<cr>
 
 "emmet-vim
 "html:5_ (Ctrl+y an,)
@@ -132,14 +151,11 @@ nmap <leader>. :CtrlPTag<cr>
 
 "用F2進入張貼模式
 nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
 
-"保留搜尋結果
-"nnoremap <F12> :set hlsearch!<CR>
-"用, h清除搜尋的高亮
-nnoremap <leader>h :let @/ = ""<CR>
 
 "把ctags建立的檔案存到./vim/tags中，防止被外面的人存取
-"ctags --tag-relative=yes -R -f ~/.vim/tags . 
+"ctags --tag-relative=yes -R -f ~/.vim/tags .
 set tags+=~/.vim/tags
 "用F3 rebuild ctags
 map <F3> :! ctags --exclude=.git --php-kinds=+cdfi --languages=-javascript,sql --recurse --tag-relative=yes -R -f ~/.vim/tags .<CR>
@@ -177,8 +193,6 @@ let NERDTreeHijackNetrw = 0
 "重載~/.vimrc設定
 nnoremap <F5> :source ~/.vimrc<CR>
 
-"Showmarks，用, c清除所有的Mark
-nnoremap <silent><Leader>m :ShowMarksClearAll<CR>
 nmap <F8> :ShowMarksToggle<CR>
 let g:showmarks_include="abcdef"
 "用leader kye，我的設定是,來開關，用:h Showmarks看說明
@@ -188,20 +202,30 @@ let g:showmarks_include="abcdef"
 ",mm : Places the next available mark.
 
 
-"Tagbar熱鍵
-nnoremap <silent><Leader>b :TagbarToggle<CR>
+
+"===控制滑鼠的模式
+function! ToggleMouse(...)
+	if &mouse == 'a'
+		set mouse=
+	else
+		set mouse=a
+	endif
+endfunc
+"滑鼠模式。
+map <silent><Leader>m :call ToggleMouse()<CR>
+
 
 "=====F9標記高亮所有搜尋結果=====
 let g:toggleHighlight = 1
 function! ToggleHighlight(...)
-  if a:0 == 1 "toggle behaviour
-    let g:toggleHighlight = 1 - g:toggleHighlight
-  endif
-  if g:toggleHighlight == 0 "normal action, do the hi
-	silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand("<cword>"), "/\'"))
-  else
-	call  clearmatches()
-  endif
+	if a:0 == 1 "toggle behaviour
+		let g:toggleHighlight = 1 - g:toggleHighlight
+	endif
+	if g:toggleHighlight == 0 "normal action, do the hi
+		silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand("<cword>"), "/\'"))
+	else
+		call  clearmatches()
+	endif
 endfunction
 
 "高亮最後搜尋的文字
@@ -211,21 +235,21 @@ map <f9> :call ToggleHighlight(1)<CR>
 "遊標F10自動高亮
 let g:toggleCursorMoved = 1
 function! ToggleCursorMoved(...)
-  if a:0 == 1 "toggle behaviour
-    let g:toggleCursorMoved = 1 - g:toggleCursorMoved
-	au! CursorMoved
-  endif
-  if g:toggleCursorMoved == 0 "normal action, do the hi
-	  autocmd CursorMoved * silent! exe printf('match Search /\<%s\>/', expand('<cword>'))
-  else
-	call  clearmatches()
-  endif
+	if a:0 == 1 "toggle behaviour
+		let g:toggleCursorMoved = 1 - g:toggleCursorMoved
+		au! CursorMoved
+	endif
+	if g:toggleCursorMoved == 0 "normal action, do the hi
+		autocmd CursorMoved * silent! exe printf('match Search /\<%s\>/', expand('<cword>'))
+	else
+		call  clearmatches()
+	endif
 endfunction
 
 "nmap <f10> :autocmd CursorMoved * silent! exe printf('match Search /\<%s\>/', expand('<cword>'))<cr>
 map ,/ :call ToggleCursorMoved(1)<CR>
 "自動檢測
-autocmd CursorMoved * call ToggleCursorMoved()
+"autocmd CursorMoved * call ToggleCursorMoved()
 
 "vim-airline
 let g:airline_theme='papercolor'
@@ -262,14 +286,14 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+			\ 'default' : '',
+			\ 'vimshell' : $HOME.'/.vimshell_hist',
+			\ 'scheme' : $HOME.'/.gosh_completions'
+			\ }
 
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
+	let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
@@ -281,7 +305,7 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return neocomplcache#smart_close_popup() . "\<CR>"
+	return neocomplcache#smart_close_popup() . "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -299,7 +323,7 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_force_omni_patterns')
-  let g:neocomplcache_force_omni_patterns = {}
+	let g:neocomplcache_force_omni_patterns = {}
 endif
 let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
@@ -310,3 +334,4 @@ let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 set background=dark
 let g:solarized_termcolors=256
 colorscheme molokai
+

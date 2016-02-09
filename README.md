@@ -67,6 +67,9 @@ brew install ctags
 <kbd>Ctrl</kbd>+<kbd>v</kbd> 垂直分割開啟選取的檔案
 <kbd>Ctrl</kbd>+<kbd>s</kbd> 水平分割開啟選取的檔案</code></pre>
 
+####emmet-vim熱鍵:
+<pre><code> 輸入html:5，游標在5的後面，壓<kbd>ctrl</kbd>+<kbd>y</kbd>再壓<kbd>,</kbd></code></pre>
+
 
 ####Ctags的熱鍵:
 <pre><code><kbd>Ctrl</kbd>+<kbd>]</kbd> 跳到tag定義的第方
