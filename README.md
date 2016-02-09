@@ -9,11 +9,23 @@
 https://youtu.be/FPYv4S5NH2o
 
 ####需安裝ctags
-MacOS 內建的ctags是不能用的，另外安裝。最簡易的方式，透過brew安裝ctags
+#####MacOS 
+<pre><code>
+<b>MacOs內建的ctags是不能用的，另外安裝。最簡易的方式，透過brew安裝ctags</b>
 Homebrew官網
 http://brew.sh/
 
-brew install ctags
+終端機下透過brew進行安裝。
+$brew install ctags
+</code></pre>
+#####Ubuntu
+<pre><code>
+<b>終端機下可透過apt-get進行安裝</b>
+$sudo apt-get install exuberant-ctags</code></pre>
+
+#####Fedora新版(如果舊版可把dnf改為yum進行安裝)
+<pre><code>$sudo dnf install ctags.x86_64</code></pre>
+
 
 
 
