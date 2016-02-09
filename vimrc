@@ -5,6 +5,7 @@ syntax reset
 syntax on
 filetype indent plugin on
 lang message zh_TW.utf-8
+set nocompatible
 set nrformats=
 set showcmd
 set number
@@ -18,16 +19,22 @@ set completeopt=menu
 set t_Co=256
 set tabpagemax=200
 set ignorecase "搜尋不分大小寫
-set incsearch
+set incsearch "增量搜尋
 set clipboard=unnamed
 set gfn=Monaco:h16
 set guioptions-=T "移除上方工具列
 set guioptions-=r "移除右邊捲軸
 set go-=L "移除左手邊捲軸
-"在vim裡面用滑鼠
-set mouse=r
-hi Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
+set mouse=a "在vim裡面用滑鼠
+set ttymouse=xterm2
+set foldcolumn=0
+set shiftwidth=4  " number of spaces to use for autoindenting
+set scrolljump=5
+set hlsearch  "保留搜尋的高亮
 hi Normal ctermfg=grey ctermbg=darkblue
+hi LineNr ctermfg=222 ctermbg=black
+hi Search ctermfg=222 ctermbg=Yellow cterm=bold,underline
+hi ErrorMsg guibg=White guifg=Red
 
 
 "單行的上下行
@@ -39,8 +46,16 @@ nnoremap <Leader>o ^/['"]<CR>l<C-w>gf
 
 "移除搜尋結果
 command! H let @/=""
+
+
 "vim-gitgutter
 let g:gitgutter_sign_column_always = 1
+let g:gitgutter_override_sign_column_highlight = 0
+"預設停用gitgutter
+let g:gitgutter_signs = 0
+
+
+
 
 let mapleader=","
 let g:cssColorVimDoNotMessMyUpdatetime = 1
@@ -118,19 +133,33 @@ nmap <leader>. :CtrlPTag<cr>
 "用F2進入張貼模式
 nnoremap <F2> :set invpaste paste?<CR>
 
+"保留搜尋結果
+"nnoremap <F12> :set hlsearch!<CR>
+"用, h清除搜尋的高亮
+nnoremap <leader>h :let @/ = ""<CR>
+
 "把ctags建立的檔案存到./vim/tags中，防止被外面的人存取
 "ctags --tag-relative=yes -R -f ~/.vim/tags . 
 set tags+=~/.vim/tags
 "用F3 rebuild ctags
 map <F3> :! ctags --exclude=.git --php-kinds=+cdfi --languages=-javascript,sql --recurse --tag-relative=yes -R -f ~/.vim/tags .<CR>
 
+
 "用空白重覆執行巨集
 nnoremap <Space> @q
 
 ":resize +5 (可垂直加五行或減五行)
 "nmap <C-A-v> :vertical resize +5 <cr>
-nmap <C-k> <C-w>5>
-nmap <C-j> <C-w>5<
+map <Up> :res +5<CR> "調整分割視視窗上下
+map <Down> :res -5<CR> "調整分割視窗大小
+map <C-j> <C-w>5>
+map <C-k> <C-w>5<
+
+
+
+"用Ctrl+l及Ctrl+h在不同的標標移動
+map  <C-l> :tabn<CR><C-w>l
+map  <C-h> :tabp<CR><C-w>h
 
 "Shift的hjkl移動normal mode視窗移動
 nmap <S-h> <C-w>h
@@ -138,9 +167,6 @@ nmap <S-j> <C-w>j
 nmap <S-k> <C-w>k
 nmap <S-l> <C-w>l
 
-"用Ctrl+l及Ctrl+h在不同的標標移動
-map  <C-l> :tabn<CR><C-w>l
-map  <C-h> :tabp<CR><C-w>h
 
 
 "NERDTree熱鍵
@@ -152,7 +178,7 @@ let NERDTreeHijackNetrw = 0
 nnoremap <F5> :source ~/.vimrc<CR>
 
 "Showmarks，用, c清除所有的Mark
-nnoremap <silent><Leader>c :ShowMarksClearAll<CR>
+nnoremap <silent><Leader>m :ShowMarksClearAll<CR>
 nmap <F8> :ShowMarksToggle<CR>
 let g:showmarks_include="abcdef"
 "用leader kye，我的設定是,來開關，用:h Showmarks看說明
@@ -181,7 +207,8 @@ endfunction
 "高亮最後搜尋的文字
 map <f9> :call ToggleHighlight(1)<CR>
 
-"F10自動高亮
+
+"遊標F10自動高亮
 let g:toggleCursorMoved = 1
 function! ToggleCursorMoved(...)
   if a:0 == 1 "toggle behaviour
@@ -196,8 +223,9 @@ function! ToggleCursorMoved(...)
 endfunction
 
 "nmap <f10> :autocmd CursorMoved * silent! exe printf('match Search /\<%s\>/', expand('<cword>'))<cr>
-map <f10> :call ToggleCursorMoved(1)<CR>
-"autocmd CursorMoved * call ToggleHighlight()
+map ,/ :call ToggleCursorMoved(1)<CR>
+"自動檢測
+autocmd CursorMoved * call ToggleCursorMoved()
 
 "vim-airline
 let g:airline_theme='papercolor'
@@ -279,7 +307,6 @@ let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\
 
 let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
-syntax enable
 set background=dark
 let g:solarized_termcolors=256
 colorscheme molokai

@@ -3,11 +3,16 @@
 主要透過 https://github.com/junegunn/vim-plug
 安裝及管理一些套件。
 
-####安裝及使用(請參考Youtube)
+####安裝(請參考Youtube)
 
 https://youtu.be/FPYv4S5NH2o
 
-####
+####需安裝ctags
+MacOS 內建的ctags是不能用的，另外安裝。最簡易的方式，透過brew安裝ctags
+Homebrew官網
+http://brew.sh/
+
+brew install ctags
 
 
 
@@ -17,7 +22,6 @@ https://youtu.be/FPYv4S5NH2o
 <kbd>F2</kbd> 啟動或取消paste狀態
 <kbd>F3</kbd> 重建tags到~/.vimr/tags
 <kbd>F5</kbd> 重載.vimrc
-<kbd>F8</kbd> Tagbar 開關
 <kbd>F9</kbd> 高亮最後搜尋結果
 <kbd>F10</kbd> 高亮游標上的字</code></pre>
 
@@ -26,7 +30,17 @@ https://youtu.be/FPYv4S5NH2o
 <pre><code><kbd>Shift</kbd>+<kbd>h</kbd>
 <kbd>Shift</kbd>+<kbd>j</kbd>
 <kbd>Shift</kbd>+<kbd>k</kbd>
-<kbd>Shfit</kbd>+<kbd>l</kbd></code></pre>
+<kbd>Shfit</kbd>+<kbd>l</kbd>
+</code></pre>
+
+####調整分割視窗大小:
+
+<kbd>Ctrl</kbd>+<kbd>j</kbd> 垂直分割放大
+<kbd>Ctrl</kbd>+<kbd>k</kbd> 垂直分割縮小
+<kbd>Up</kbd> 水平分割放大
+<kbd>Down</kbd> 水平分割縮小
+
+
 
 ####不同的tab間移動:
 
@@ -41,7 +55,9 @@ https://youtu.be/FPYv4S5NH2o
 所以透過<kbd>:e .</kbd>即可開啟這個資料夾的檔案</code></pre>
 
 ####Tagbar熱鍵(快速的押,再壓b)
-<pre><code><kbd>,</kbd>+<kbd>b</kbd> 開關Tagbar</code></pre>
+<pre><code><kbd>,</kbd>+<kbd>c</kbd> 清除搜尋結果的高亮
+<pre><code><kbd>,</kbd>+<kbd>m</kbd> 清除所有mark標記
+<pre><code><kbd>,</kbd>+<kbd>b</kbd> Tagbar開關 </code></pre>
 
 ####CtrlP的熱鍵:
 <pre><code><kbd>Ctrl</kbd>+<kbd>p</kbd> 搜尋檔案
