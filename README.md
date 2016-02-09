@@ -2,6 +2,7 @@
 這個是我使用的.vimrc設定檔，
 主要透過 https://github.com/junegunn/vim-plug
 安裝及管理一些套件。
+如果是Vim的初學者想快速安裝一些外掛，可以試試看。
 
 ####安裝(請參考Youtube)
 
