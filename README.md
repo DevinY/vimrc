@@ -3,7 +3,7 @@
 主要透過 https://github.com/junegunn/vim-plug
 安裝及管理一些套件。
 如果是Vim的初學者想快速安裝一些外掛，可以試試看。
-
+![Screenshot](https://ccc.tc/vimrc.png)
 ####安裝(請參考Youtube)
 
 https://youtu.be/FPYv4S5NH2o
