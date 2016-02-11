@@ -17,7 +17,8 @@ set sw=4
 set bs=2
 set nopaste
 set ai
-set fillchars+=vert:█
+"分割視窗的邊框字型，預設是|
+"set fillchars+=vert:█
 hi VertSplit guifg=red guibg=bg
 "set foldmethod=manual
 set completeopt=menu
