@@ -21,16 +21,15 @@ Terminal應該要設定相關的字型。
 
 ####安裝(請參考Youtube)
 
-https://youtu.be/FPYv4S5NH2o
+<pre><code>https://youtu.be/FPYv4S5NH2o
 簡單說就是將vim的設定檔拷貝到自己的家目錄下的.vimrc。
 如果您自已經有設定檔可先備份起來。
 這個設定檔內含vim-plug這個外掛，所以透過curl載入vim-plug先。
 進入Vim後，即可載入設定檔定義的其他外掛。
-載入其他定義在vimrc中的外掛。
+載入其他定義在vimrc中的外掛。</code></pre>
 
 #####Ubuntu
-<pre><code>
-<b>終端機下可透過apt-get進行安裝</b>
+<pre><code><b>終端機下可透過apt-get進行安裝</b>
 $sudo apt-get install exuberant-ctags</code></pre>
 
 #####Fedora新版(如果舊版可把dnf改為yum進行安裝)
