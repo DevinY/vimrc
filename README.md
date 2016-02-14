@@ -15,9 +15,9 @@ http://brew.sh/
 $brew install ctags
 </code></pre>
 #####Powerline字型
-https://github.com/powerline/fonts
+<pre><code>https://github.com/powerline/fonts</br>
 
-Terminal應該要設定相關的字型。
+Terminal應該要設定相關的字型。</code></pre>
 
 ####安裝(請參考Youtube)
 
