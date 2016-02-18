@@ -21,7 +21,15 @@ set ai
 "set fillchars+=vert:█
 hi VertSplit guifg=red guibg=bg
 "set foldmethod=manual
-set completeopt=menu
+
+"Make Vim completion popup menu work just like in an IDE
+set completeopt=longest,menuone
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
 set t_Co=256
 set tabpagemax=200
 set ignorecase "搜尋不分大小寫
@@ -34,6 +42,7 @@ set go-=L "移除左手邊捲軸
 set mouse=r "在vim裡面用滑鼠
 "set ttymouse=xterm2
 set foldcolumn=0
+set expandtab
 set shiftwidth=4  " number of spaces to use for autoindenting
 set scrolljump=5
 set hlsearch  "保留搜尋的高亮
