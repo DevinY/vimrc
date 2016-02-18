@@ -4,12 +4,8 @@
 安裝及管理一些套件。
 如果是Vim的初學者想快速安裝一些外掛，可以試試看。
 ![Screenshot](https://ccc.tc/vimrc.png)
-####安裝(請參考Youtube)
-
-https://youtu.be/FPYv4S5NH2o
-
-####需安裝ctags
-#####MacOS 
+####需先安裝軟體
+#####Ctags for Mac OS
 <pre><code>
 <b>MacOs內建的ctags是不能用的，另外安裝。最簡易的方式，透過brew安裝ctags</b>
 Homebrew官網
@@ -18,9 +14,22 @@ http://brew.sh/
 終端機下透過brew進行安裝。
 $brew install ctags
 </code></pre>
+#####Powerline字型
+<pre><code>https://github.com/powerline/fonts</br>
+
+Terminal應該要設定相關的字型。</code></pre>
+
+####安裝(請參考Youtube)
+
+<pre><code>https://youtu.be/FPYv4S5NH2o
+簡單說就是將vim的設定檔拷貝到自己的家目錄下的.vimrc。
+如果您自已經有設定檔可先備份起來。
+這個設定檔內含vim-plug這個外掛，所以透過curl載入vim-plug先。
+進入Vim後，即可載入設定檔定義的其他外掛。
+載入其他定義在vimrc中的外掛。</code></pre>
+
 #####Ubuntu
-<pre><code>
-<b>終端機下可透過apt-get進行安裝</b>
+<pre><code><b>終端機下可透過apt-get進行安裝</b>
 $sudo apt-get install exuberant-ctags</code></pre>
 
 #####Fedora新版(如果舊版可把dnf改為yum進行安裝)
