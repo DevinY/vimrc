@@ -23,6 +23,7 @@ hi VertSplit guifg=red guibg=bg
 "set foldmethod=manual
 
 
+
 "Make Vim completion popup menu work just like in an IDE
 set completeopt=longest,menuone
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
@@ -118,7 +119,7 @@ imap jj <esc>
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 
 
-call plug#begin('~/.vim/plugged')
+silent! call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
@@ -351,3 +352,5 @@ colorscheme molokai
 
 "設定Macvim GUI的字型
 set guifont=Source\ Code\ Pro\ for\ Powerline:h16
+"MacVim的行高設定
+set linespace=3
