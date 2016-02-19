@@ -36,7 +36,7 @@ $sudo apt-get install exuberant-ctags</code></pre>
 <pre><code>$sudo dnf install ctags.x86_64</code></pre>
 
 #####我在Mac上使用MacVim的別名
-vi='/Applications/MacVim.app/Contents/MacOS/Vim -gopN'
+<pre><code>vi='/Applications/MacVim.app/Contents/MacOS/Vim -gopN'</code></pre>
 
 
 
