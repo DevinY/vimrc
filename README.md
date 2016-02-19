@@ -35,6 +35,8 @@ $sudo apt-get install exuberant-ctags</code></pre>
 #####Fedora新版(如果舊版可把dnf改為yum進行安裝)
 <pre><code>$sudo dnf install ctags.x86_64</code></pre>
 
+#####我在Mac上使用MacVim的別名
+vi='/Applications/MacVim.app/Contents/MacOS/Vim -gopN'
 
 
 
