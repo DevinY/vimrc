@@ -202,6 +202,8 @@ nmap <S-l> <C-w>l
 nmap <silent> <C-N> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 let NERDTreeHijackNetrw = 0
+let NERDTreeShowLineNumbers= 1 "NERDTree顯示行號"
+
 
 "重載~/.vimrc設定
 nnoremap <F5> :source ~/.vimrc<CR>
