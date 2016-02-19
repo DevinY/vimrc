@@ -26,7 +26,7 @@ Terminal應該要設定相關的字型。</code></pre>
 如果您自已經有設定檔可先備份起來。
 這個設定檔內含vim-plug這個外掛，所以透過curl載入vim-plug先。
 使用vim-plug您需要有git指令
-進入Vim後，即可載入設定檔定義的其他外掛。
+進入Vim後，即可透過:PlugInstall 載入我的其他外掛。
 載入其他定義在vimrc中的外掛。</code></pre>
 
 #####Ubuntu
