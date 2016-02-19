@@ -22,6 +22,7 @@ set ai
 hi VertSplit guifg=red guibg=bg
 "set foldmethod=manual
 
+
 "Make Vim completion popup menu work just like in an IDE
 set completeopt=longest,menuone
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
@@ -46,7 +47,8 @@ set expandtab
 set shiftwidth=4  " number of spaces to use for autoindenting
 set scrolljump=5
 set hlsearch  "保留搜尋的高亮
-hi Normal ctermfg=grey ctermbg=darkblue
+"hi Normal ctermfg=grey ctermbg=black
+hi Normal ctermfg=grey 
 hi LineNr ctermfg=222 ctermbg=black
 hi Search ctermfg=222 ctermbg=Yellow cterm=bold,underline
 hi ErrorMsg guibg=White guifg=Red
@@ -259,6 +261,7 @@ endfunction
 "nmap <f10> :autocmd CursorMoved * silent! exe printf('match Search /\<%s\>/', expand('<cword>'))<cr>
 map ,/ :call ToggleCursorMoved(1)<CR>
 "自動檢測
+autocmd BufWritePost .vimrc source %
 "autocmd CursorMoved * call ToggleCursorMoved()
 
 "vim-airline
@@ -346,3 +349,5 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme molokai
 
+"設定Macvim GUI的字型
+set guifont=Source\ Code\ Pro\ for\ Powerline:h16
