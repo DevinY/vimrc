@@ -194,10 +194,15 @@ map  <C-l> :tabn<CR><C-w>l
 map  <C-h> :tabp<CR><C-w>h
 
 "Shift的hjkl移動normal mode視窗移動
-nmap <S-h> <C-w>h
-nmap <S-j> <C-w>j
-nmap <S-k> <C-w>k
-nmap <S-l> <C-w>l
+nmap <leader>h <C-w>h
+nmap <leader>j <C-w>j
+nmap <leader>k <C-w>k
+nmap <leader>l <C-w>l
+"大寫的H跟Vim的熱鍵有衝突，改用leader h
+"nmap <S-h> <C-w>h
+"nmap <S-j> <C-w>j
+"nmap <S-k> <C-w>k
+"nmap <S-l> <C-w>l
 
 
 
@@ -267,7 +272,8 @@ endfunction
 "nmap <f10> :autocmd CursorMoved * silent! exe printf('match Search /\<%s\>/', expand('<cword>'))<cr>
 map ,/ :call ToggleCursorMoved(1)<CR>
 "自動檢測
-autocmd BufWritePost .vimrc source %
+autocmd! BufWritePost .vimrc source %
+
 "autocmd CursorMoved * call ToggleCursorMoved()
 
 "vim-airline

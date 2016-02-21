@@ -52,10 +52,10 @@ $sudo apt-get install exuberant-ctags</code></pre>
 
 ####不同視窗上下移動:
 
-<pre><code><kbd>Shift</kbd>+<kbd>h</kbd>
-<kbd>Shift</kbd>+<kbd>j</kbd>
-<kbd>Shift</kbd>+<kbd>k</kbd>
-<kbd>Shfit</kbd>+<kbd>l</kbd>
+<pre><code><kbd>,</kbd><kbd>h</kbd>
+<kbd>,</kbd><kbd>j</kbd>
+<kbd>,</kbd><kbd>k</kbd>
+<kbd>,</kbd><kbd>l</kbd>
 </code></pre>
 
 ####調整分割視窗大小:
