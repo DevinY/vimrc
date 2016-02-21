@@ -21,6 +21,8 @@ set ai
 "set fillchars+=vert:█
 hi VertSplit guifg=red guibg=bg
 "set foldmethod=manual
+set splitbelow
+set splitright
 
 
 
@@ -139,6 +141,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/SearchComplete'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/ShowMarks'
+Plug 'msanders/snipmate.vim' "snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim.
 call plug#end()
 
 "CtrlP
@@ -345,7 +348,6 @@ endif
 let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
 let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 set background=dark
