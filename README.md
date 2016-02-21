@@ -51,7 +51,7 @@ $sudo apt-get install exuberant-ctags</code></pre>
 <kbd>F10</kbd> 高亮游標上的字</code></pre>
 
 ####不同視窗上下移動:
-
+,是 leader 鍵，就是壓一下豆號，再快速的壓hjkl等鍵
 <pre><code><kbd>,</kbd><kbd>h</kbd>
 <kbd>,</kbd><kbd>j</kbd>
 <kbd>,</kbd><kbd>k</kbd>
