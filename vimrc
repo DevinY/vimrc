@@ -142,6 +142,7 @@ Plug 'vim-scripts/SearchComplete'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/ShowMarks'
 Plug 'msanders/snipmate.vim' "snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim.
+Plug 'DataWraith/auto_mkdir' " Vim plugin that allows you to save files into directories that do not exist yet.
 call plug#end()
 
 "CtrlP
