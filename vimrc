@@ -141,8 +141,13 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/SearchComplete'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/ShowMarks'
-Plug 'msanders/snipmate.vim' "snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim.
+"Plug 'msanders/snipmate.vim' "snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim.
 Plug 'DataWraith/auto_mkdir' " Vim plugin that allows you to save files into directories that do not exist yet.
+Plug 'jwalton512/vim-blade' "Vim syntax highlighting for Blade templates.
+Plug 'tobyS/vmustache'      
+Plug 'tobyS/pdv'            "pdv需有上方的vmustache"
+Plug 'SirVer/ultisnips'
+
 call plug#end()
 
 "CtrlP
@@ -164,6 +169,16 @@ let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
 
 "emmet-vim
 "html:5_ (Ctrl+y an,)
+
+"pdv
+let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
+nnoremap <leader>d :call pdv#DocumentWithSnip()<CR>
+
+"UltiSnips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 
 "用F2進入張貼模式
