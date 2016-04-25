@@ -82,7 +82,7 @@ let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 let g:syntastic_shell_checkers = ['bash', 'sh']
 
 "保留搜尋結果
-"nnoremap <F12> :set hlsearch!<CR>
+nnoremap <F12> :set hlsearch!<CR>
 "用, h清除搜尋的高亮
 nnoremap <leader>h :let @/ = ""<CR>
 "Tagbar熱鍵
