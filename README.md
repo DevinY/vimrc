@@ -47,8 +47,8 @@ $sudo apt-get install exuberant-ctags</code></pre>
 <kbd>F2</kbd> 啟動或取消paste狀態
 <kbd>F3</kbd> 重建tags到~/.vimr/tags
 <kbd>F5</kbd> 重載.vimrc
-<kbd>F9</kbd> 高亮最後搜尋結果
-<kbd>F10</kbd> 高亮游標上的字</code></pre>
+<kbd>F9</kbd> 高亮游標上的字
+<kbd>,/</kbd> 自動高亮游標上的字</code></pre>
 
 ####不同視窗上下移動:
 ,是 leader 鍵，就是壓一下豆號，再快速的壓hjkl等鍵
