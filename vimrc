@@ -3,8 +3,8 @@
 set fileencodings=utf-8,gb2312,big5
 hi clear
 if exists("syntax_on")
-syntax reset
-syntax on
+    syntax reset
+    syntax on
 endif
 filetype indent plugin on
 lang message zh_TW.utf-8
@@ -26,10 +26,10 @@ set splitright
 "Make Vim completion popup menu work just like in an IDE
 set completeopt=longest,menuone
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+            \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+            \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 set t_Co=256
 set tabpagemax=200
@@ -46,7 +46,7 @@ set foldcolumn=0
 set ts=8 "tabstop
 set expandtab
 set softtabstop=4
-set sw=4 "shiftwidth number of spaces to use for autoindenting
+set shiftwidth=4 "shiftwidth number of spaces to use for autoindenting
 set bs=2
 set scrolljump=5
 set hlsearch  "保留搜尋的高亮
@@ -111,8 +111,8 @@ let g:cssColorVimDoNotMessMyUpdatetime = 1
 
 "自動縮看
 augroup vimrc
-	au BufReadPre * setlocal foldmethod=indent
-	au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+    au BufReadPre * setlocal foldmethod=indent
+    au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 
 
@@ -247,6 +247,9 @@ let NERDTreeShowLineNumbers= 1 "NERDTree顯示行號"
 "重載~/.vimrc設定
 nnoremap <F5> :source ~/.vimrc<CR>
 
+"自動縮排
+map <F7> mzgg=G`z
+
 nmap <F8> :ShowMarksToggle<CR>
 let g:showmarks_include="abcdef"
 "用leader kye，我的設定是,來開關，用:h Showmarks看說明
@@ -259,11 +262,11 @@ let g:showmarks_include="abcdef"
 
 "===控制滑鼠的模式
 function! ToggleMouse(...)
-	if &mouse == 'a'
-		set mouse=
-	else
-		set mouse=a
-	endif
+    if &mouse == 'a'
+        set mouse=
+    else
+        set mouse=a
+    endif
 endfunc
 "滑鼠模式。
 map <silent><Leader>m :call ToggleMouse()<CR>
@@ -272,14 +275,14 @@ map <silent><Leader>m :call ToggleMouse()<CR>
 "=====F9標記高亮所有搜尋結果=====
 let g:toggleHighlight = 1
 function! ToggleHighlight(...)
-	if a:0 == 1 "toggle behaviour
-		let g:toggleHighlight = 1 - g:toggleHighlight
-	endif
-	if g:toggleHighlight == 0 "normal action, do the hi
-		silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand("<cword>"), "/\'"))
-	else
-		call  clearmatches()
-	endif
+    if a:0 == 1 "toggle behaviour
+        let g:toggleHighlight = 1 - g:toggleHighlight
+    endif
+    if g:toggleHighlight == 0 "normal action, do the hi
+        silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand("<cword>"), "/\'"))
+    else
+        call  clearmatches()
+    endif
 endfunction
 
 "高亮最後搜尋的文字
@@ -289,15 +292,15 @@ map <f9> :call ToggleHighlight(1)<CR>
 "遊標F10自動高亮
 let g:toggleCursorMoved = 1
 function! ToggleCursorMoved(...)
-	if a:0 == 1 "toggle behaviour
-		let g:toggleCursorMoved = 1 - g:toggleCursorMoved
-		au! CursorMoved
-	endif
-	if g:toggleCursorMoved == 0 "normal action, do the hi
-		autocmd CursorMoved * silent! exe printf('match Search /\<%s\>/', expand('<cword>'))
-	else
-		call  clearmatches()
-	endif
+    if a:0 == 1 "toggle behaviour
+        let g:toggleCursorMoved = 1 - g:toggleCursorMoved
+        au! CursorMoved
+    endif
+    if g:toggleCursorMoved == 0 "normal action, do the hi
+        autocmd CursorMoved * silent! exe printf('match Search /\<%s\>/', expand('<cword>'))
+    else
+        call  clearmatches()
+    endif
 endfunction
 
 "nmap <f10> :autocmd CursorMoved * silent! exe printf('match Search /\<%s\>/', expand('<cword>'))<cr>
@@ -310,7 +313,7 @@ autocmd! BufWritePost .vimrc source %
 "vim-airline
 let g:airline_theme='papercolor'
 if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
+    let g:airline_symbols = {}
 endif
 set laststatus=2
 let g:airline_powerline_fonts = 1
