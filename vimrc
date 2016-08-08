@@ -70,6 +70,7 @@ nnoremap <Leader>o ^/['"]<CR>l<C-w>gf
 "let you search through your tags file and jump to where tags are defined.
 nmap <leader>. :CtrlPTag<cr>
 
+
 "syntatstic 語法確認的外掛。
 set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
@@ -158,8 +159,11 @@ Plug 'stephpy/vim-php-cs-fixer'  "需安裝php-cs-fixer，可用composer裝，co
 call plug#end()
 
 "CtrlP
-let g:ctrlp_custom_ignore = 'node_modules\|git'
+"let g:ctrlp_custom_ignore = 'node_modules\|git'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules)$'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,bower_components,node_modules,*/cache/*.php
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
+"let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 
 "vim-php-cs-fixer
 let g:php_cs_fixer_level = "psr2"              " which level ?
