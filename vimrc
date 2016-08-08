@@ -20,7 +20,7 @@ set ai
 "分割視窗的邊框字型，預設是|
 "set fillchars+=vert:█
 hi VertSplit guifg=red guibg=bg
-"set foldmethod=manual
+set foldmethod=manual
 set splitbelow
 set splitright
 
@@ -108,7 +108,7 @@ let g:gitgutter_signs = 0
 
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 
-
+"自動縮看
 augroup vimrc
 	au BufReadPre * setlocal foldmethod=indent
 	au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
@@ -151,6 +151,7 @@ Plug 'jwalton512/vim-blade' "Vim syntax highlighting for Blade templates.
 Plug 'tobyS/vmustache'      
 Plug 'tobyS/pdv'            "pdv需有上方的vmustache"
 Plug 'SirVer/ultisnips'
+Plug 'stephpy/vim-php-cs-fixer'  "需安裝php-cs-fixer，可用composer裝，composer.phar global require fabpot/php-cs-fixer
 
 call plug#end()
 
@@ -158,6 +159,12 @@ call plug#end()
 let g:ctrlp_custom_ignore = 'node_modules\|git'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
 
+"vim-php-cs-fixer
+let g:php_cs_fixer_level = "psr2"              " which level ?
+let g:php_cs_fixer_path = "php-cs-fixer"
+"let g:php_cs_fixer_config_file = '.php_cs'       " configuration file
+let g:php_cs_fixer_php_path = "php"
+map <leader>pf :call PhpCsFixerFixFile()<CR>
 
 
 "Commands                        Mode
