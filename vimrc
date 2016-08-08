@@ -161,7 +161,7 @@ call plug#end()
 "CtrlP
 "let g:ctrlp_custom_ignore = 'node_modules\|git'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules)$'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,bower_components,node_modules,*/cache/*.php
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,bower_components,node_modules,*/cache/*.php,*.pdf,*.doc,*.jpg,*.png
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
 "let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 
