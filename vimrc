@@ -12,9 +12,6 @@ set nocompatible
 set nrformats=
 set showcmd
 set number
-set ts=4
-set sw=4
-set bs=2
 set nopaste
 set ai
 "分割視窗的邊框字型，預設是|
@@ -46,10 +43,14 @@ set go-=L "移除左手邊捲軸
 set mouse=r "在vim裡面用滑鼠
 "set ttymouse=xterm2
 set foldcolumn=0
+set ts=8 "tabstop
 set expandtab
-set shiftwidth=4  " number of spaces to use for autoindenting
+set softtabstop=4
+set sw=4 "shiftwidth number of spaces to use for autoindenting
+set bs=2
 set scrolljump=5
 set hlsearch  "保留搜尋的高亮
+
 "hi Normal ctermfg=grey ctermbg=black
 hi Normal ctermfg=grey 
 hi LineNr ctermfg=222 ctermbg=black
