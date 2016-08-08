@@ -146,6 +146,7 @@ Plug 'vim-scripts/SearchComplete'
 Plug 'vim-scripts/ShowMarks'
 Plug 'posva/vim-vue'
 Plug 'ervandew/supertab'
+Plug 'szw/vim-tags'
 "Plug 'msanders/snipmate.vim' "snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim.
 Plug 'DataWraith/auto_mkdir' " Vim plugin that allows you to save files into directories that do not exist yet.
 Plug 'jwalton512/vim-blade' "Vim syntax highlighting for Blade templates.
@@ -181,7 +182,9 @@ map <leader>pf :call PhpCsFixerFixFile()<CR>
 
 "emmet-vim
 "html:5_ (Ctrl+y an,)
-
+"vim-tags
+let g:vim_tags_auto_generate = 1
+let g:vim_tags_directories = [".git", ".hg", ".svn", ".bzr", "_darcs", "CVS"]
 
 "pdv
 let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
@@ -201,9 +204,11 @@ set pastetoggle=<F2>
 
 "把ctags建立的檔案存到./vim/tags中，防止被外面的人存取
 "ctags --tag-relative=yes -R -f ~/.vim/tags .
-set tags+=~/.vim/tags
+"set tags+=~/.vim/tags
+
 "用F3 rebuild ctags
-map <F3> :! ctags --exclude=.git --php-kinds=+cdfi --languages=-javascript,sql --recurse --tag-relative=yes -R -f ~/.vim/tags .<CR>
+"map <F3> :! ctags --exclude=.git --php-kinds=+cdfi --languages=-javascript,sql --recurse --tag-relative=yes -R -f ~/.vim/tags .<CR>
+map <F3> :TagsGenerate!
 
 
 "用空白重覆執行巨集
