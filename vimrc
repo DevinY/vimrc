@@ -154,7 +154,7 @@ Plug 'jwalton512/vim-blade' "Vim syntax highlighting for Blade templates.
 Plug 'tobyS/vmustache'      
 Plug 'tobyS/pdv'            "pdv需有上方的vmustache"
 Plug 'SirVer/ultisnips'
-Plug 'stephpy/vim-php-cs-fixer'  "需安裝php-cs-fixer，可用composer裝，composer.phar global require fabpot/php-cs-fixer
+Plug 'stephpy/vim-php-cs-fixer'  "需安裝php-cs-fixer，可用composer裝，composer global require fabpot/php-cs-fixer
 
 call plug#end()
 
