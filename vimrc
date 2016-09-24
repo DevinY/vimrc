@@ -148,6 +148,7 @@ Plug 'vim-scripts/ShowMarks'
 Plug 'posva/vim-vue'
 Plug 'ervandew/supertab'
 Plug 'szw/vim-tags'
+Plug 'captbaritone/better-indent-support-for-php-with-html'
 "Plug 'msanders/snipmate.vim' "snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim.
 Plug 'DataWraith/auto_mkdir' " Vim plugin that allows you to save files into directories that do not exist yet.
 Plug 'jwalton512/vim-blade' "Vim syntax highlighting for Blade templates.
