@@ -2,6 +2,7 @@
 "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 set fileencodings=utf-8,gb2312,big5
 hi clear
+
 if exists("syntax_on")
     syntax reset
     syntax on
@@ -103,7 +104,7 @@ command! H let @/=""
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_override_sign_column_highlight = 0
 "預設停用gitgutter
-let g:gitgutter_signs = 0
+let g:gitgutter_signs = 1
 
 
 
@@ -149,6 +150,7 @@ Plug 'posva/vim-vue'
 Plug 'ervandew/supertab'
 Plug 'szw/vim-tags'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
+Plug 'tkhren/vim-fake' "假資料
 "Plug 'msanders/snipmate.vim' "snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim.
 Plug 'DataWraith/auto_mkdir' " Vim plugin that allows you to save files into directories that do not exist yet.
 Plug 'jwalton512/vim-blade' "Vim syntax highlighting for Blade templates.
