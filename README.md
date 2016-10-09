@@ -91,6 +91,48 @@ $sudo apt-get install exuberant-ctags</code></pre>
 <kbd>Ctrl</kbd>+<kbd>t</kbd> 使用tab開啟選取的檔案
 <kbd>Ctrl</kbd>+<kbd>v</kbd> 垂直分割開啟選取的檔案
 <kbd>Ctrl</kbd>+<kbd>s</kbd> 水平分割開啟選取的檔案</code></pre>
+####vim-fake:
+詳細請參考:
+https://github.com/tkhren/vim-fake
+The following built-in dictionaries({keyname}) are available as data sources.
+The dictionary is a simple text file which is like `/usr/share/dict/words` on UNIX.
+`fake#gen({keyname})` chooses and returns a random line from the {keyname} dictionary.
+
+| {keyname}     | Contents                    | Order               |
+|:--------------|:----------------------------|:--------------------|
+| male_name     | Male names in the world     | Population          |
+| female_name   | Female names in the world   | Population          |
+| surname       | Surnames in the world       | Population          |
+| country       | Country names               | Population          |
+| gtld          | gTLD                        | Number of websites  |
+| job           | Job names                   | &nbsp;              |
+| word          | English words               | &nbsp;              |
+| nonsense      | Nonsense words              | &nbsp;              |
+
+
+### Replace
+
+To replace the following `dummy` texts with real names
+
+```xml
+<ul>
+	<li> dummy </li>
+	<li> dummy </li>
+	<li> dummy </li>
+	<li> dummy </li>
+</ul>
+```
+
+Type next, `:%s/dummy/\=fake#gen("male_name")/g`
+
+```xml
+<ul>
+	<li> Steve </li>
+	<li> Rodney </li>
+	<li> Leonard </li>
+	<li> Adam </li>
+</ul>
+```
 
 ####emmet-vim熱鍵:
 <pre><code> 輸入html:5，游標在5的後面，壓<kbd>ctrl</kbd>+<kbd>y</kbd>再壓<kbd>,</kbd></code></pre>
