@@ -76,8 +76,8 @@ set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_php_checkers = ['php','phpcs']
@@ -155,8 +155,17 @@ Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv'            "pdv需有上方的vmustache"
 Plug 'SirVer/ultisnips'
 Plug 'stephpy/vim-php-cs-fixer'  "需安裝php-cs-fixer，可用composer裝，composer global require fabpot/php-cs-fixer
-
+Plug 'maksimr/vim-jsbeautify' "先用選取後，壓Ctrl+f, autocmd FileType php要補，這樣php檔才有作用
+Plug 'tpope/vim-ragtag' "Tag功能, span| press CTRL+x再壓space，就會變<span></span>
+Plug 'alvan/vim-closetag' "自動close tag. <span|, 然後輸入>，就會變<span></span>
 call plug#end()
+
+"closetag
+let g:closetag_filenames = "*.html,*.php"
+
+"ragtag
+ let g:ragtag_global_maps = 1
+
 
 "CtrlP
 "let g:ctrlp_custom_ignore = 'node_modules\|git'
@@ -316,6 +325,13 @@ endfunction
 map ,/ :call ToggleCursorMoved(1)<CR>
 "自動檢測
 autocmd! BufWritePost .vimrc source %
+".vimrc
+autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
+autocmd FileType json vnoremap <buffer> <c-f> :call RangeJsonBeautify()<cr>
+autocmd FileType jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+autocmd FileType php vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr
 
 "autocmd CursorMoved * call ToggleCursorMoved()
 
