@@ -160,7 +160,7 @@ Plug 'SirVer/ultisnips'
 Plug 'stephpy/vim-php-cs-fixer'  "需安裝php-cs-fixer，可用composer裝，composer global require fabpot/php-cs-fixer
 Plug 'maksimr/vim-jsbeautify' "先用選取後，壓Ctrl+f, autocmd FileType php要補，這樣php檔才有作用
 Plug 'tpope/vim-ragtag' "Tag功能, span| press CTRL+x再壓space，就會變<span></span>
-Plug 'alvan/vim-closetag' "自動close tag. <span|, 然後輸入>，就會變<span></span>
+"Plug 'alvan/vim-closetag' "自動close tag. <span|, 然後輸入>，就會變<span></span>(好像沒有很好用，進行註解)
 call plug#end()
 
 "closetag
