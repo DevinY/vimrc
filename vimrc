@@ -130,7 +130,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
-Plug 'edsono/vim-matchit'
+Plug 'deviny/matchit'
 Plug 'tpope/vim-fugitive'
 Plug 'Shougo/neocomplcache.vim'
 Plug 'altercation/vim-colors-solarized'
