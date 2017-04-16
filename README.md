@@ -133,6 +133,19 @@ Type next, `:%s/dummy/\=fake#gen("male_name")/g`
 	<li> Adam </li>
 </ul>
 ```
+### Quickly create incremented lists
+http://www.vim.org/scripts/script.php?script_id=145
+例如，畫面上有大量number
+<pre>
+number
+number
+number
+</pre>
+指定一個變數，然後變更。
+<pre>
+:let i=0
+%s/number/\=Inc(1)/
+</pre>
 
 #### emmet-vim熱鍵:
 <pre><code> 輸入html:5，游標在5的後面，壓<kbd>ctrl</kbd>+<kbd>y</kbd>再壓<kbd>,</kbd></code></pre>

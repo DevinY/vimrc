@@ -22,7 +22,13 @@ set foldmethod=manual
 set splitbelow
 set splitright
 
-
+" Add argument (can be negative, default 1) to global variable i.
+" Return value of i before the change.
+function Inc(...)
+  let result = g:i
+  let g:i += a:0 > 0 ? a:1 : 1
+  return result
+endfunction
 
 "Make Vim completion popup menu work just like in an IDE
 set completeopt=longest,menuone
@@ -151,6 +157,9 @@ Plug 'ervandew/supertab'
 Plug 'szw/vim-tags'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'tkhren/vim-fake' "假資料
+" 使用這個功能, cd ~/.vim/plugged/vimproc;make
+Plug 'Shougo/vimproc', {'do': 'make'} "Powerful shell implemented by vim
+Plug 'Shougo/vimshell' "Powerful shell implemented by vim, :vimshell
 "Plug 'msanders/snipmate.vim' "snipMate.vim aims to be a concise vim script that implements some of TextMate's snippets features in Vim.
 Plug 'DataWraith/auto_mkdir' " Vim plugin that allows you to save files into directories that do not exist yet.
 Plug 'jwalton512/vim-blade' "Vim syntax highlighting for Blade templates.
