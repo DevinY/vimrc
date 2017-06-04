@@ -58,6 +58,11 @@ $sudo apt-get install exuberant-ctags</code></pre>
 <kbd>,</kbd><kbd>l</kbd>
 </code></pre>
 
+#### Yank current file's name:
+<pre><code>
+<kbd>,</kbd><kbd>e</kbd>
+</code></pre>
+
 #### 調整分割視窗大小:
 
 <pre><code><kbd>Ctrl</kbd>+<kbd>j</kbd> 垂直分割放大

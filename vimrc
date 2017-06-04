@@ -101,6 +101,8 @@ nnoremap <silent><Leader>b :TagbarToggle<CR>
 "Showmarks，用, c清除所有的Mark
 nnoremap <silent><Leader>c :ShowMarksClearAll<CR>
 
+"yank current file's name
+nnoremap <leader>e :let @*=expand('%:t')
 
 "移除搜尋結果
 command! H let @/=""
