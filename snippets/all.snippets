@@ -1,0 +1,481 @@
+snippet !
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>$1</title>
+</head>
+<body>
+$2	
+</body>
+</html>
+endsnippet
+
+snippet rs
+<!-- row start -->
+endsnippet
+snippet re
+<!-- row end -->
+endsnippet
+snippet die
+
+endsnippet
+snippet echo
+<?=\$$1;?>
+endsnippet
+snippet option
+    <option value='$1'>$2</option>
+endsnippet
+snippet tr
+<tr>
+    <td>
+    $1
+    </td>
+</tr>
+endsnippet
+
+snippet td
+<td>
+    $1
+</td>
+endsnippet
+
+snippet php
+<?php
+$1
+?>
+endsnippet
+snippet db
+$$1=new DB('tpeip');
+endsnippet
+snippet dbq
+$db->query($1);
+endsnippet
+snippet dbd
+$db->data($1);
+endsnippet
+snippet web
+window.addEventListener('WebComponentsReady', function(e) {
+$1
+});
+endsnippet
+
+snippet header
+   header("Content-Type:text/html; charset=utf-8");
+   header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+   header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+endsnippet
+
+snippet bs3-show
+$('#myModal').on('show.bs.modal', function (e) {
+  if (!data) return e.preventDefault() // stops modal from being shown
+})
+endsnippet
+snippet bs3-select
+<select class="form-control" name="${1}">
+<option value="">${2}</option>
+</select>
+endsnippet
+snippet bs3-button
+<button type="button" class="btn btn-default">$1</button>
+endsnippet
+snippet bs3-a
+<a href="$1" class="btn btn-primary">$2</a>
+endsnippet
+
+snippet bs3-modal
+<a class="btn btn-primary" data-toggle="modal" href='#modal-${1}id'>Trigger modal</a>
+<div class="modal fade" id="modal-${1}id">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Modal title</h4>
+			</div>
+			<div class="modal-body">
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary">確認</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
+endsnippet
+snippet bs3-form
+<form action="" method="POST" role="form">
+<legend>Form title</legend>
+
+<div class="form-group">
+<label for="">label</label>
+<input type="text" class="form-control" id="" placeholder="Input field">
+</div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+endsnippet
+snippet bs3-input
+<input type="text" class="form-control" id="" placeholder="Input field">
+endsnippet
+snippet bs3-textarea
+<textarea name="" id="input" class="form-control" rows="4" ></textarea>
+endsnippet
+snippet pe
+error_reporting(E_ALL);
+ini_set( 'display_errors','1');
+endsnippet
+snippet style
+<style>
+.container{
+margin-top:2em;
+width:98%;
+}
+</style>
+endsnippet
+snippet link
+	<link rel="stylesheet" type="text/css" href="$1">
+endsnippet
+snippet linki
+	<link rel="import" href="$1">
+endsnippet
+snippet linkp
+<link rel="import" href="/js/bower/polymer/polymer.html">
+endsnippet
+snippet linkp-button
+<link rel="import" href="/js/bower/paper-button/paper-button.html">
+endsnippet
+snippet linkp-checkbox
+<link rel="import" href="/js/bower/paper-checkbox/paper-checkbox.html">
+endsnippet
+snippet linkp-drawer-panel
+<link rel="import" href="/js/bower/paper-drawer-panle/paper-drawer-panle.html">
+endsnippet
+snippet p-drawer-panel
+<paper-drawer-panel>
+  <div drawer> Drawer panel... </div>
+  <div main> Main panel... </div>
+</paper-drawer-panel>
+endsnippet
+
+snippet p-button
+<paper-button raised>$1</paper-button>
+endsnippet
+
+snippet p-checkbox
+<paper-checkbox name="$1">$2</paper-checkbox>
+endsnippet
+
+snippet linke
+<link rel="import" href="/js/elements/$1.html">
+endsnippet
+snippet linkc
+<link rel="import" href="/js/components/$1.html">
+endsnippet
+snippet src
+<script src="$1"></script>
+endsnippet
+snippet script
+<script>$1</script>
+endsnippet
+snippet src.babel
+   <script src="/js/babel.min.js"></script>
+endsnippet
+snippet script.babel
+<script type="text/babel">
+$1
+</script>
+endsnippet
+snippet base
+<link href="/css/base.css" rel="stylesheet" type="text/css">
+<script src="/js/base.js"></script>
+endsnippet
+snippet comm
+/*
+|--------------------------------------------------------------------------
+| 用途:${1} 
+|--------------------------------------------------------------------------
+| \$obj->method
+| 說明
+| @param   
+| @return void
+|
+*/
+endsnippet
+
+snippet base-bt
+      <script src="/js/bootstrap-table.base.js"></script>
+endsnippet
+snippet dt 
+<link href="/css/jquery.datetimepicker.min.css" rel="stylesheet" type="text/css">
+<script src="/js/jquery.datetimepicker.full.min.js"></script>
+endsnippet
+snippet dtjs
+   jQuery.datetimepicker.setLocale('zh');
+   $("$1").datetimepicker({
+		 i18n:{
+			   zh:{
+					 months:[
+					 '一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'
+					 ],
+					 dayOfWeekShort:["日","一","二","三","四","五","六"]
+			   }
+		 }
+   });
+endsnippet
+snippet div.container
+<div class="container">
+$1
+</div>
+endsnippet
+snippet bs3-row
+<div class="row">
+$1
+</div>
+endsnippet
+snippet bs3-col
+<div class="col-xs-$1">
+$5	
+</div>
+endsnippet
+snippet bs3-table
+
+<table class="table table-hover table-bordered">
+	<thead>
+		<tr>
+			<th>$1</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>$2</td>
+		</tr>
+	</tbody>
+</table>
+endsnippet
+snippet bs-table
+<table id="tbList" class="table table-bordered" data-toggle="table"
+data-url="https://ow.elweb.tw/model/5"
+data-pagination="true"
+data-side-pagination="server"
+data-page-list="[5, 10, 20, 50, 100, 200]"
+data-page-size="10"
+data-page-number=1
+data-search="true"
+data-search-formatter="true"
+data-show-refresh="true"
+data-show-toggle="true"
+data-show-columns="true"
+data-toolbar="#custom-toolbar"
+data-sort-name="id"
+data-sort-order="desc"
+>
+<thead>
+<!-- Sample
+<tr>
+<th data-field="c_id" data-visible="false">ID</th>
+<th data-field="title" data-visiable="true" data-sortable="true" data-formatter="title">Title</th>
+<th data-field="m_dt_h" data-visable="true" data-sortable="true">修改時間</th>
+</tr>
+-->
+</thead>
+</table>
+endsnippet
+snippet bs-script
+var searchText=""; 
+var titleFormatter, content1Formatter; 
+ markHighLight = function(searchText,v){
+    if(searchText=="") return v;
+    var pattern = new RegExp('(.*)(' + searchText + ')(.*)','g'),
+        replaceWith = '$1<mark>$2</mark>$3',
+                    highlighted = v.replace(pattern,replaceWith);
+    return highlighted;
+}
+titleFormatter = function(v)
+{
+    return markHighLight(searchText, v);
+}
+content1Formatter = function(v)
+{
+    return markHighLight(searchText, v);
+}
+
+var vm = new Vue({
+    el: "body",
+    data:{
+        page:1,
+    searchText: ""
+    },
+    watch: {
+        'page':function(val, oldVal){
+
+            console.log(val);
+            this.resource="/current_page/"+this.page+"/b_id/"+this.b_id;
+
+            this.$http.post(this.resource).then(function(response){
+                console.log(response);
+            },function(response){
+                console.log(response);
+            });
+        }
+    },
+    ready: function(){
+        $('#tbList').bootstrapTable({
+        }).on('search.bs.table', function (e,text) {
+            vm.searchText = text;
+            searchText = text;
+        }).on('all.bs.table', function (e, name, args) {
+            //console.log('Event:', name, ', data:', args);
+        }).on('page-change.bs.table', function (e, size, number) {
+            vm.page = size;
+        }).on('click-row.bs.table', function (e, row, $element) {
+             // location.href="/content/"+row.c_id;
+              //暫時停用，修正後再啟用
+        }).on('search.bs.table', function (e, text) {
+
+        }).on('load-success.bs.table', function (e, name, args) {
+        });
+    }
+});
+endsnippet
+snippet ow-b
+$${1} = new Block("${2}", "${3}");
+endsnippet
+snippet ow-l
+$${1}->limit(${2}) //限制資料列，數字
+->setActive(${3})  //設定目前頁面的變數，例: $_GET['page']
+->where("${4}")    //條件，例如: c_id=3
+->renew();   //從新生成上方定義好的資料
+endsnippet
+snippet ow-p
+<?php $${1}->pagination("p"); ?>
+endsnippet
+snippet ow-s
+<?php $${1}->start_template(); ?>
+endsnippet
+snippet ow-r
+<?php $${1}->repeat_template(); ?>
+endsnippet
+snippet ow-e
+<?php $${1}->repeat_template(); ?>
+endsnippet
+snippet ow-g
+$c_id = ${1}
+$${2}->getContent($c_id)${3};
+endsnippet
+snippet ow-f
+foreach (${1}->row() as $obj) {
+echo $obj->title."</br>";
+echo $obj->content1."<br/>";
+//後台自訂的擴充欄位也可以顯示
+//echo $obj->email;
+}
+endsnippet
+snippet vue
+let vm = new Vue({
+  el: 'body',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+});
+endsnippet
+snippet vue-ready
+ready: function(){
+$1
+}
+endsnippet
+snippet bs-init
+$('${1}#tbList').bootstrapTable({
+	  }).on('search.bs.table', function (e,text) {
+		 vm.searchText = text;
+		 searchText = text;
+		 }).on('all.bs.table', function (e, name, args) {
+			//console.log('Event:', name, ', data:', args);
+			}).on('page-change.bs.table', function (e, size, number) {
+			   vm.page = size;
+			   }).on('click-row.bs.table', function (e, row, $element) {
+				  location.href="lecture_item.php?zrec_id="+row.zrec_id;
+				  }).on('search.bs.table', function (e, text) {
+
+					 }).on('load-success.bs.table', function (e, name, args) {
+						var total = 0;
+						for(var n in name.rows)
+						{
+						total += parseInt(name.rows[n].num);
+						}
+						vm.total_join=total;
+						});
+endsnippet
+
+snippet ext
+@extends('${1}')
+endsnippet
+snippet sec
+@section('${1}')
+${2}
+@stop
+endsnippet
+
+snippet }}
+    {{${1}}}
+endsnippet
+
+snippet if
+@if (${1})
+    ${2}
+@endif
+endsnippet
+
+snippet bs-model
+<?php
+header("Content-Type:text/html; charset=utf-8");
+header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+error_reporting(E_ALL);
+ini_set( 'display_errors','1'); //開發階段，顯示錯誤用
+include_once("../common/_db_link_mysqli.php"); //使用自訂的DB Class(mysqli)
+$db = new DB("tpeip"); //連內部系統的DB
+/*================================================
+=             Bootstrap-Table需要的參數           =
+================================================*/
+$limit=isset($_GET['limit'])?$_GET['limit']:"10";
+$offset=isset($_GET['offset'])?$_GET['offset']:"0";
+$search=isset($_GET['search'])?$_GET['search']:"";
+$order=isset($_GET['order'])?$_GET['order']:"desc";
+$sort=isset($_GET['sort'])?$_GET['sort']:"id";
+$defaultCondition = sprintf("%s","is_display='1'");
+//更多的條件，加入搜尋條件
+$searchCondition="";
+if(!empty($search))
+{
+//搜尋Sample
+$searchCondition=sprintf(" AND  
+item like '%%%s%%'  ", $search);
+}
+//排序Sample
+   $orderByString="";
+   if(!empty($sort)){
+      $orderByString=sprintf("ORDER BY %s %s",$sort, $order);
+   }
+//用來取得總資料列的語法
+$sql_count = sprintf("SELECT 
+count(id) num 
+FROM elite_form_types as eft
+WHERE %s %s", $defaultCondition, $searchCondition);
+$db->query($sql_count);
+//取得總數
+$total=$db->data("num");
+//內來取得列表的語法參考
+$sql_list=sprintf("SELECT 
+eft.id,
+eft.item
+FROM elite_form_types as eft
+WHERE %s %s 
+%s
+limit %s,%s",$defaultCondition, $searchCondition, $orderByString, $offset, $limit);
+//echo $sql_list."<br/>";
+$res = $db->query($sql_list);
+$modelData = array();
+echo $db->bt($total);
+?>
+endsnippet
