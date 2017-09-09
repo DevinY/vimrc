@@ -24,11 +24,11 @@ set splitright
 
 " Add argument (can be negative, default 1) to global variable i.
 " Return value of i before the change.
-function Inc(...)
-  let result = g:i
-  let g:i += a:0 > 0 ? a:1 : 1
-  return result
-endfunction
+"function Inc(...)
+"  let result = g:i
+"  let g:i += a:0 > 0 ? a:1 : 1
+"  return result
+"endfunction
 
 "Make Vim completion popup menu work just like in an IDE
 set completeopt=longest,menuone
@@ -183,10 +183,10 @@ let g:closetag_filenames = "*.html,*.php"
 
 "CtrlP
 "let g:ctrlp_custom_ignore = 'node_modules\|git'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules)$'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,bower_components,node_modules,*/cache/*.php,*.pdf,*.doc,*.jpg,*.png
+"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules)$'
+"set wildignore+=*/tmp/*,*.so,*.swp,*.zip,bower_components,node_modules,*/cache/*.php,*.pdf,*.doc,*.jpg,*.png
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
-"let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+let g:ctrlp_user_command = 'find %s -type f ! -path "*bower_components/*" ! -path "*node_modules/*" ! -path "*vendor/*" ! -path "*.git/*"'        " MacOSX/Linux
 
 "vim-php-cs-fixer
 let g:php_cs_fixer_level = "psr2"              " which level ?
@@ -241,9 +241,9 @@ nnoremap <leader>d :call pdv#DocumentWithSnip()<CR>
 
 "UltiSnips
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>""
 
 
 "用F2進入張貼模式

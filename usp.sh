@@ -1,3 +1,3 @@
 #!/bin/bash
 mkdir -p ~/.vim/UltiSnips
-cp php.snippets ~/.vim/UltiSnips/php.snippets 
+cp snippets/php.snippets ~/.vim/UltiSnips/php.snippets 
