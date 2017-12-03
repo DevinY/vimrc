@@ -3,6 +3,13 @@
 主要透過 https://github.com/junegunn/vim-plug
 安裝及管理一些套件。
 如果是Vim的初學者想快速安裝一些外掛，可以試試看。
+
+您的使用MacOs是否碰到了類似的錯誤?
+Error detected while processing function UltiSnips#TrackChange:
+請參考我的Blog如下方式，可解決這個問題:
+https://www.ccc.tc/article/ultisnips-requires-py3-issue-on-macos
+
+
 ![Screenshot](https://ccc.tc/vimrc.png)
 #### 需先安裝軟體
 ##### Ctags for Mac OS
